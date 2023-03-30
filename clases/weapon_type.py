@@ -5,7 +5,7 @@ from enum import Enum
 
 
 """
-This Python module contains not only the Enum WeaponType, but also the test of
+This Python module contains not only the Enum TipoArma, but also the test of
 this Python class.
 
 @contents :  This module contains not only a single Python class, but also the
@@ -37,14 +37,14 @@ this Python class.
 
 
 
-class WeaponType(Enum):
+class TipoArma(Enum):
     """Python class to implement an enumeration for the attribute Weapon Type.
 
     This Python class implements an enumeration for the attribute Weapon Type.
 
     Syntax
     ------
-      obj = WeaponType.Enum
+      obj = TipoArma.Enum
 
     Parameters
     ----------
@@ -52,15 +52,15 @@ class WeaponType(Enum):
     Returns
     -------
       obj Python object output parameter that represents an instance
-          of the class WeaponType.
+          of the class TipoArma.
 
     Attributes
     ----------
 
     Example
     -------
-      >>> from weapon_type import WeaponType
-      >>> obj_WeaponType = WeaponType.Boxer
+      >>> from weapon_type import TipoArma
+      >>> obj_TipoArma = TipoArma.Boxer
     """
 
     PUÑETAZO = 2
@@ -72,7 +72,7 @@ class WeaponType(Enum):
 def main():
     """Function main of the module.
 
-    The function main of this module is used to test the Class WeaponType.
+    The function main of this module is used to test the Class TipoArma.
 
     Syntax
     ------
@@ -92,49 +92,49 @@ def main():
     """
 
     print("=================================================================.")
-    print("Test Case 1: Check Class WeaponType - Name.")
+    print("Test Case 1: Check Class TipoArma - Name.")
     print("=================================================================.")
 
-    if isinstance(WeaponType.PUÑETAZO, WeaponType):
+    if isinstance(TipoArma.PUÑETAZO, TipoArma):
         print("Test PASS. The enum for Puñetazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.PATADA, WeaponType):
+    if isinstance(TipoArma.PATADA, TipoArma):
         print("Test PASS. The enum for Patada has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.CODAZO, WeaponType):
+    if isinstance(TipoArma.CODAZO, TipoArma):
         print("Test PASS. The enum for Codazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.CABEZAZO, WeaponType):
+    if isinstance(TipoArma.CABEZAZO, TipoArma):
         print("Test PASS. The enum for Cabezazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
     print("=================================================================.")
-    print("Test Case 2: Check Class WeaponType - Value.")
+    print("Test Case 2: Check Class TipoArma - Value.")
     print("=================================================================.")
 
-    if WeaponType.PUÑETAZO.value == 2:
+    if TipoArma.PUÑETAZO.value == 2:
         print("Test PASS. The enum for Puñetazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.PATADA.value == 4:
+    if TipoArma.PATADA.value == 4:
         print("Test PASS. The enum for Patada has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.CODAZO.value == 6:
+    if TipoArma.CODAZO.value == 6:
         print("Test PASS. The enum for Codazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.CABEZAZO.value == 10:
+    if TipoArma.CABEZAZO.value == 10:
         print("Test PASS. The enum for Cabezazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")

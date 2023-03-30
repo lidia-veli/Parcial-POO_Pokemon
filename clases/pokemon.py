@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from clases.weapon_type import WeaponType
+
+from clases.weapon_type import TipoArma
 
 """
 This Python module contains not only the class Pokemon, but also the test of
@@ -47,7 +48,7 @@ class Pokemon():
     ----------
       [in] pokemon_id ID of the Pokemon : int
       [in] nombre_pokemon Name of the Pokemon : str
-      [in] tipo_arma Type of weapon that carries out the Pokemon : Enum in WeaponType
+      [in] tipo_arma Type of weapon that carries out the Pokemon : Enum in TipoArma
       [in] puntos_salud Points of health that the Pokemon has : int in range(1, 101)
       [in] indice_ataque Attack rating of the Pokemon : int in range(1, 11)
       [in] indice_defensa Defense rating of the Pokemon: int in range(1, 11)
@@ -65,8 +66,8 @@ class Pokemon():
     Example
     -------
       >>> from pokemon import Pokemon
-      >>> from weapon_type import WeaponType
-      >>> obj_Pokemon = Pokemon(1, "Bulbasaur", WeaponType.PUNCH, 100, 7, 10)
+      >>> from tipo_arma import TipoArma
+      >>> obj_Pokemon = Pokemon(1, "Bulbasaur", TipoArma.PUÑETAZO, 100, 7, 10)
     """
 
     def __init__(self, pokemon_id, nombre_pokemon, tipo_arma, puntos_salud, indice_ataque, indice_defensa):
@@ -88,15 +89,15 @@ class Pokemon():
         #   raise TypeError("The parameter id must be a valid integer.")
 
         if not isinstance(self.__nombre, str):
-            raise TypeError("The parameter pokemon_name must be a string.")
-        if not isinstance(self.__arma, WeaponType):
-            raise TypeError("The parameter weapon_type must be a WeaponType.")
+            raise TypeError("The parameter nombre_pokemon must be a string.")
+        if not isinstance(self.__arma, TipoArma):
+            raise TypeError("The parameter tipo_arma must be a TipoArma.")
         if not isinstance(self.__salud, int) and self.__salud not in range(1, 101):
-            raise TypeError("The parameter health_points must be an integer between 1 and 100.")
+            raise TypeError("The parameter puntos_salud must be an integer between 1 and 100.")
         if not isinstance(self.__ataque, int) and self.__ataque not in range(1, 11):
-            raise TypeError("The parameter attack_rating must be an integer between 1 and 10.")
+            raise TypeError("The parameter indice_ataque must be an integer between 1 and 10.")
         if not isinstance(self.__defensa, int) and self.__defensa not in range(1, 11):
-            raise TypeError("The parameter defense_rating must be an integer between 1 and 10.")
+            raise TypeError("The parameter indice_defensa must be an integer between 1 and 10.")
         
 
     def __del__(self): # eliminar la instancia de Pokemon de la lista global
@@ -179,30 +180,30 @@ def main():
     print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
-    pokemon_1 = Pokemon(1, "Ivysaur", WeaponType.HEADBUTT, 100, 8, 9)
+    pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.CABEZAZO, 100, 8, 9)
 
     if pokemon_1.get_nombre() == "Ivysaur":
-        print("Test PASS. The parameter pokemon_name has been correctly set.")
+        print("Test PASS. The parameter nombre_pokemon has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_arma().name == "HEADBUTT":
-        print("Test PASS. The parameter weapon_type has been correctly set.")
+    if pokemon_1.get_arma().name == "CABEZAZO":
+        print("Test PASS. The parameter tipo_arma has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
     if pokemon_1.get_salud() == 100:
-        print("Test PASS. The parameter health_points has been correctly set.")
+        print("Test PASS. The parameter puntos_salud has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
     if pokemon_1.get_ataque() == 8:
-        print("Test PASS. The parameter attack_rating has been correctly set.")
+        print("Test PASS. The parameter indice_ataque has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
     if pokemon_1.get_defensa() == 9:
-        print("Test PASS. The parameter defense_rating has been correctly set.")
+        print("Test PASS. The parameter indice_defensa has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
@@ -210,9 +211,9 @@ def main():
     print("=================================================================.")
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
-    pokemon_2 = Pokemon(2, "Charmander", WeaponType.HEADBUTT, 100, 7, 10)
+    pokemon_2 = Pokemon(2, "Charmander", TipoArma.CABEZAZO, 100, 7, 10)
 
-    if str(pokemon_2) == "Pokemon ID 2 with name Charmander has as weapon HEADBUTT and health 100":
+    if str(pokemon_2) == "Pokemon ID 2 with name Charmander has as weapon CABEZAZO and health 100":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
     else:
         print("Test FAIL. Check the method __str__()." + " RESULT: " + str(pokemon_2))
@@ -221,7 +222,7 @@ def main():
     print("=================================================================.")
     print("Test Case 3: Pokemon alive?¿?.")
     print("=================================================================.")
-    pokemon_3 = Pokemon(3, "Wartortle", WeaponType.KICK, 97, 8, 9)
+    pokemon_3 = Pokemon(3, "Wartortle", TipoArma.PATADA, 97, 8, 9)
 
     if pokemon_3.is_alive():
         pokemon_3.fight_defense(200)  # With this the Pokemon should be retired.
@@ -237,7 +238,7 @@ def main():
     print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
-    pokemon_4 = Pokemon(4, "Squirtle", WeaponType.ELBOW, 93, 9, 6)
+    pokemon_4 = Pokemon(4, "Squirtle", TipoArma.CODAZO, 93, 9, 6)
 
     pokemon_4.fight_defense(70)
 
@@ -250,8 +251,8 @@ def main():
     print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
-    pokemon_5 = Pokemon(5, "Venusaur", WeaponType.PUNCH, 99, 10, 7)
-    pokemon_6 = Pokemon(6, "Charmeleon", WeaponType.PUNCH, 99, 9, 8)
+    pokemon_5 = Pokemon(5, "Venusaur", TipoArma.PUÑETAZO, 99, 10, 7)
+    pokemon_6 = Pokemon(6, "Charmeleon", TipoArma.PUÑETAZO, 99, 9, 8)
 
     pokemon_was_hit = pokemon_5.fight_attack(pokemon_6)
 
