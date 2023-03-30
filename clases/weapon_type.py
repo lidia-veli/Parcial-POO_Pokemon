@@ -95,23 +95,23 @@ def main():
     print("Test Case 1: Check Class WeaponType - Name.")
     print("=================================================================.")
 
-    if isinstance(WeaponType.PUNCH, WeaponType):
-        print("Test PASS. The enum for Punch has been correctly set.")
+    if isinstance(WeaponType.PUÑETAZO, WeaponType):
+        print("Test PASS. The enum for Puñetazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.KICK, WeaponType):
-        print("Test PASS. The enum for Kick has been correctly set.")
+    if isinstance(WeaponType.PATADA, WeaponType):
+        print("Test PASS. The enum for Patada has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.ELBOW, WeaponType):
-        print("Test PASS. The enum for Elbow has been correctly set.")
+    if isinstance(WeaponType.CODAZO, WeaponType):
+        print("Test PASS. The enum for Codazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.HEADBUTT, WeaponType):
-        print("Test PASS. The enum for Head Butt has been correctly set.")
+    if isinstance(WeaponType.CABEZAZO, WeaponType):
+        print("Test PASS. The enum for Cabezazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
@@ -119,23 +119,23 @@ def main():
     print("Test Case 2: Check Class WeaponType - Value.")
     print("=================================================================.")
 
-    if WeaponType.PUNCH.value == 2:
-        print("Test PASS. The enum for Punch has been correctly set.")
+    if WeaponType.PUÑETAZO.value == 2:
+        print("Test PASS. The enum for Puñetazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.KICK.value == 4:
-        print("Test PASS. The enum for Kick has been correctly set.")
+    if WeaponType.PATADA.value == 4:
+        print("Test PASS. The enum for Patada has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.ELBOW.value == 6:
-        print("Test PASS. The enum for Elbow has been correctly set.")
+    if WeaponType.CODAZO.value == 6:
+        print("Test PASS. The enum for Codazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.HEADBUTT.value == 10:
-        print("Test PASS. The enum for Head Butt has been correctly set.")
+    if WeaponType.CABEZAZO.value == 10:
+        print("Test PASS. The enum for Cabezazo has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
