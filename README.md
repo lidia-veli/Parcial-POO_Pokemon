@@ -1,4 +1,5 @@
-link repositorio: https://github.com/lidia-veli/Parcial-POO_Pokemon
+link repositorio: https://github.com/lidia-veli/Parcial-POO_Pokemon  
+Comentario: sólo me ha dado tiempo a hacer el 1º ejercicio, a lo largo del fin de semana terminaré los otros dos
 # Parcial POO Pokemon
 
 ## EJERCICIO 1 (5 puntos) 
